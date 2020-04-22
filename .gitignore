@@ -15,3 +15,7 @@ yarn-error.log
 
 # Library code
 lib/
+
+# Build
+public/
+.cache/
