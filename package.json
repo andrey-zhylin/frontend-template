@@ -19,6 +19,7 @@
   "scripts": {
     "build": "gatsby build",
     "start": "gatsby develop",
+    "serve": "gatsby serve",
     "setup": "yarn install",
     "reset:modules": "rimraf node_modules/ yarn.lock apps/*/node_modules",
     "reset:yarn": "yarn cache clean",
@@ -28,12 +29,14 @@
   },
   "dependencies": {
     "gatsby": "2.20.25",
-    "gatsby-plugin-ts": "2.7.1",
+    "gatsby-plugin-graphql-codegen": "2.7.1",
+    "gatsby-plugin-typescript": "2.3.3",
+    "gatsby-source-contentful": "2.1.78",
+    "mkdirp": "0.5.1",
     "react": "16.12.0",
     "react-dom": "16.12.0",
-    "typescript": "3.8.3",
-    "mkdirp": "0.5.1",
-    "rimraf": "2.6.3"
+    "rimraf": "2.6.3",
+    "typescript": "3.8.3"
   },
   "devDependencies": {
     "@types/node": "8.0.7",
