@@ -4,9 +4,9 @@ try {
   // Load the Contentful config from the .contentful.json
   contentfulConfig = require('./.contentful')
 } catch (_) {
-  throw new Error(
-    'Config file not exists'
-  );
+  // throw new Error(
+  //   'Config file not exists'
+  // );
 }
 
 // Overwrite the Contentful config with environment variables if they exist
