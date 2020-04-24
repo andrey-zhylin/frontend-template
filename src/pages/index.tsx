@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Header } from '../components';
+const RootIndex = () => {
+  return <div>Home page</div>;
+};
 
-export const Index = () => <Header />;
-
-export default Index;
+export default RootIndex;

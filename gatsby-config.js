@@ -1,3 +1,7 @@
 module.exports = {
-  plugins: [`gatsby-plugin-ts`]
+  plugins: [
+    'gatsby-plugin-netlify-cms',
+    'gatsby-plugin-typescript',
+    'gatsby-plugin-graphql-codegen'
+  ]
 };
