@@ -5,7 +5,7 @@ try {
   contentfulConfig = require('./.contentful')
 } catch (_) {
   throw new Error(
-    'Contentful spaceId and the delivery token need to be provided.'
+    'Config file not exists'
   );
 }
 
