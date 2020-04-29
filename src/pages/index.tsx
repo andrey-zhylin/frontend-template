@@ -19,6 +19,15 @@ export const Index = () => (
     `}
     render={(data: Query) => (
       <div>
+        <div>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://docs.google.com/spreadsheets/d/1etQoqC8FWvHQbP5V5e4_2WAF2bq1eBz7pTD1f7ouc4M"
+          >
+            Spreadsheet
+          </a>
+        </div>
         {data.allGoogleSpreadsheetSheet1.edges.map(edge => (
           <div key={edge.node.id || ''}>{edge.node.name}</div>
         ))}
