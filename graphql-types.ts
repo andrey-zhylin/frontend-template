@@ -614,6 +614,153 @@ export type FloatQueryOperatorInput = {
   nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
 };
 
+export type GoogleSpreadsheetSheet1 = Node & {
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  name?: Maybe<Scalars['String']>;
+  googleSpreadsheetId?: Maybe<Scalars['String']>;
+};
+
+export type GoogleSpreadsheetSheet1Connection = {
+  totalCount: Scalars['Int'];
+  edges: Array<GoogleSpreadsheetSheet1Edge>;
+  nodes: Array<GoogleSpreadsheetSheet1>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<GoogleSpreadsheetSheet1GroupConnection>;
+};
+
+export type GoogleSpreadsheetSheet1ConnectionDistinctArgs = {
+  field: GoogleSpreadsheetSheet1FieldsEnum;
+};
+
+export type GoogleSpreadsheetSheet1ConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field: GoogleSpreadsheetSheet1FieldsEnum;
+};
+
+export type GoogleSpreadsheetSheet1Edge = {
+  next?: Maybe<GoogleSpreadsheetSheet1>;
+  node: GoogleSpreadsheetSheet1;
+  previous?: Maybe<GoogleSpreadsheetSheet1>;
+};
+
+export type GoogleSpreadsheetSheet1FieldsEnum =
+  | 'id'
+  | 'parent___id'
+  | 'parent___parent___id'
+  | 'parent___parent___parent___id'
+  | 'parent___parent___parent___children'
+  | 'parent___parent___children'
+  | 'parent___parent___children___id'
+  | 'parent___parent___children___children'
+  | 'parent___parent___internal___content'
+  | 'parent___parent___internal___contentDigest'
+  | 'parent___parent___internal___description'
+  | 'parent___parent___internal___fieldOwners'
+  | 'parent___parent___internal___ignoreType'
+  | 'parent___parent___internal___mediaType'
+  | 'parent___parent___internal___owner'
+  | 'parent___parent___internal___type'
+  | 'parent___children'
+  | 'parent___children___id'
+  | 'parent___children___parent___id'
+  | 'parent___children___parent___children'
+  | 'parent___children___children'
+  | 'parent___children___children___id'
+  | 'parent___children___children___children'
+  | 'parent___children___internal___content'
+  | 'parent___children___internal___contentDigest'
+  | 'parent___children___internal___description'
+  | 'parent___children___internal___fieldOwners'
+  | 'parent___children___internal___ignoreType'
+  | 'parent___children___internal___mediaType'
+  | 'parent___children___internal___owner'
+  | 'parent___children___internal___type'
+  | 'parent___internal___content'
+  | 'parent___internal___contentDigest'
+  | 'parent___internal___description'
+  | 'parent___internal___fieldOwners'
+  | 'parent___internal___ignoreType'
+  | 'parent___internal___mediaType'
+  | 'parent___internal___owner'
+  | 'parent___internal___type'
+  | 'children'
+  | 'children___id'
+  | 'children___parent___id'
+  | 'children___parent___parent___id'
+  | 'children___parent___parent___children'
+  | 'children___parent___children'
+  | 'children___parent___children___id'
+  | 'children___parent___children___children'
+  | 'children___parent___internal___content'
+  | 'children___parent___internal___contentDigest'
+  | 'children___parent___internal___description'
+  | 'children___parent___internal___fieldOwners'
+  | 'children___parent___internal___ignoreType'
+  | 'children___parent___internal___mediaType'
+  | 'children___parent___internal___owner'
+  | 'children___parent___internal___type'
+  | 'children___children'
+  | 'children___children___id'
+  | 'children___children___parent___id'
+  | 'children___children___parent___children'
+  | 'children___children___children'
+  | 'children___children___children___id'
+  | 'children___children___children___children'
+  | 'children___children___internal___content'
+  | 'children___children___internal___contentDigest'
+  | 'children___children___internal___description'
+  | 'children___children___internal___fieldOwners'
+  | 'children___children___internal___ignoreType'
+  | 'children___children___internal___mediaType'
+  | 'children___children___internal___owner'
+  | 'children___children___internal___type'
+  | 'children___internal___content'
+  | 'children___internal___contentDigest'
+  | 'children___internal___description'
+  | 'children___internal___fieldOwners'
+  | 'children___internal___ignoreType'
+  | 'children___internal___mediaType'
+  | 'children___internal___owner'
+  | 'children___internal___type'
+  | 'internal___content'
+  | 'internal___contentDigest'
+  | 'internal___description'
+  | 'internal___fieldOwners'
+  | 'internal___ignoreType'
+  | 'internal___mediaType'
+  | 'internal___owner'
+  | 'internal___type'
+  | 'name'
+  | 'googleSpreadsheetId';
+
+export type GoogleSpreadsheetSheet1FilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  name?: Maybe<StringQueryOperatorInput>;
+  googleSpreadsheetId?: Maybe<StringQueryOperatorInput>;
+};
+
+export type GoogleSpreadsheetSheet1GroupConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<GoogleSpreadsheetSheet1Edge>;
+  nodes: Array<GoogleSpreadsheetSheet1>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type GoogleSpreadsheetSheet1SortInput = {
+  fields?: Maybe<Array<Maybe<GoogleSpreadsheetSheet1FieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
 export type Internal = {
   content?: Maybe<Scalars['String']>;
   contentDigest: Scalars['String'];
@@ -684,6 +831,8 @@ export type Query = {
   allSitePage: SitePageConnection;
   site?: Maybe<Site>;
   allSite: SiteConnection;
+  googleSpreadsheetSheet1?: Maybe<GoogleSpreadsheetSheet1>;
+  allGoogleSpreadsheetSheet1: GoogleSpreadsheetSheet1Connection;
   siteBuildMetadata?: Maybe<SiteBuildMetadata>;
   allSiteBuildMetadata: SiteBuildMetadataConnection;
   sitePlugin?: Maybe<SitePlugin>;
@@ -805,6 +954,8 @@ export type QueryAllSitePageArgs = {
 
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -816,6 +967,22 @@ export type QuerySiteArgs = {
 export type QueryAllSiteArgs = {
   filter?: Maybe<SiteFilterInput>;
   sort?: Maybe<SiteSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+export type QueryGoogleSpreadsheetSheet1Args = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  name?: Maybe<StringQueryOperatorInput>;
+  googleSpreadsheetId?: Maybe<StringQueryOperatorInput>;
+};
+
+export type QueryAllGoogleSpreadsheetSheet1Args = {
+  filter?: Maybe<GoogleSpreadsheetSheet1FilterInput>;
+  sort?: Maybe<GoogleSpreadsheetSheet1SortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
@@ -858,6 +1025,8 @@ export type QueryAllSitePluginArgs = {
 
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
+  port?: Maybe<Scalars['Int']>;
+  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -1051,6 +1220,8 @@ export type SiteEdge = {
 
 export type SiteFieldsEnum =
   | 'buildTime'
+  | 'port'
+  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -1142,6 +1313,8 @@ export type SiteFieldsEnum =
 
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -1334,6 +1507,17 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___resolve'
   | 'pluginCreator___name'
   | 'pluginCreator___version'
+  | 'pluginCreator___pluginOptions___spreadsheetId'
+  | 'pluginCreator___pluginOptions___credentials___type'
+  | 'pluginCreator___pluginOptions___credentials___project_id'
+  | 'pluginCreator___pluginOptions___credentials___private_key_id'
+  | 'pluginCreator___pluginOptions___credentials___private_key'
+  | 'pluginCreator___pluginOptions___credentials___client_email'
+  | 'pluginCreator___pluginOptions___credentials___client_id'
+  | 'pluginCreator___pluginOptions___credentials___auth_uri'
+  | 'pluginCreator___pluginOptions___credentials___token_uri'
+  | 'pluginCreator___pluginOptions___credentials___auth_provider_x509_cert_url'
+  | 'pluginCreator___pluginOptions___credentials___client_x509_cert_url'
   | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
@@ -1516,6 +1700,17 @@ export type SitePluginFieldsEnum =
   | 'resolve'
   | 'name'
   | 'version'
+  | 'pluginOptions___spreadsheetId'
+  | 'pluginOptions___credentials___type'
+  | 'pluginOptions___credentials___project_id'
+  | 'pluginOptions___credentials___private_key_id'
+  | 'pluginOptions___credentials___private_key'
+  | 'pluginOptions___credentials___client_email'
+  | 'pluginOptions___credentials___client_id'
+  | 'pluginOptions___credentials___auth_uri'
+  | 'pluginOptions___credentials___token_uri'
+  | 'pluginOptions___credentials___auth_provider_x509_cert_url'
+  | 'pluginOptions___credentials___client_x509_cert_url'
   | 'pluginOptions___path'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
@@ -1631,11 +1826,41 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 };
 
 export type SitePluginPluginOptions = {
+  spreadsheetId?: Maybe<Scalars['String']>;
+  credentials?: Maybe<SitePluginPluginOptionsCredentials>;
   path?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
+export type SitePluginPluginOptionsCredentials = {
+  type?: Maybe<Scalars['String']>;
+  project_id?: Maybe<Scalars['String']>;
+  private_key_id?: Maybe<Scalars['String']>;
+  private_key?: Maybe<Scalars['String']>;
+  client_email?: Maybe<Scalars['String']>;
+  client_id?: Maybe<Scalars['String']>;
+  auth_uri?: Maybe<Scalars['String']>;
+  token_uri?: Maybe<Scalars['String']>;
+  auth_provider_x509_cert_url?: Maybe<Scalars['String']>;
+  client_x509_cert_url?: Maybe<Scalars['String']>;
+};
+
+export type SitePluginPluginOptionsCredentialsFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  project_id?: Maybe<StringQueryOperatorInput>;
+  private_key_id?: Maybe<StringQueryOperatorInput>;
+  private_key?: Maybe<StringQueryOperatorInput>;
+  client_email?: Maybe<StringQueryOperatorInput>;
+  client_id?: Maybe<StringQueryOperatorInput>;
+  auth_uri?: Maybe<StringQueryOperatorInput>;
+  token_uri?: Maybe<StringQueryOperatorInput>;
+  auth_provider_x509_cert_url?: Maybe<StringQueryOperatorInput>;
+  client_x509_cert_url?: Maybe<StringQueryOperatorInput>;
+};
+
 export type SitePluginPluginOptionsFilterInput = {
+  spreadsheetId?: Maybe<StringQueryOperatorInput>;
+  credentials?: Maybe<SitePluginPluginOptionsCredentialsFilterInput>;
   path?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
@@ -1659,4 +1884,12 @@ export type StringQueryOperatorInput = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
   regex?: Maybe<Scalars['String']>;
   glob?: Maybe<Scalars['String']>;
+};
+
+export type Unnamed_1_QueryVariables = {};
+
+export type Unnamed_1_Query = {
+  allGoogleSpreadsheetSheet1: {
+    edges: Array<{ node: Pick<GoogleSpreadsheetSheet1, 'id' | 'name'> }>;
+  };
 };
